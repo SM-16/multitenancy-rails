@@ -9,7 +9,7 @@ class TenantsController < ApplicationController
 
   # GET /tenants/1 or /tenants/1.json
   def show
-    redirect_to root_path, alert:"You are not a member." unless @tenant.members.include?(current_user)
+    return redirect_to root_path, alert:"You are not a member." unless @tenant.users.include?(current_user)
   end
 
   # GET /tenants/new
@@ -67,7 +67,7 @@ class TenantsController < ApplicationController
     end
 
     def authorize_member
-      redirect_to root_path, alert:"You are not a member." unless @tenant.members.include?(current_user)
+      redirect_to root_path, alert:"You are not a member." unless @tenant.users.include?(current_user)
     end
 
     # Only allow a list of trusted parameters through.

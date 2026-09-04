@@ -1,0 +1,14 @@
+<h1>Tenant: <%= @tenant.name %></h1>
+<h2>Invite User</h2>
+<%= form_with url: invite_tenant_members_path, method: :post do |form|%>
+    <%= form.text_field :email, placeholder: "Email" %>
+    <%= form.submit "Invite" %>
+<% end %>
+<h2>Members</h2>
+<div class="">
+    <% @members.each do |member| %>
+        <%= member.user.email %>
+        <%= member.roles %>
+        <br>
+    <% end %>
+</div>
