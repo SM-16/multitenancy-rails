@@ -66,5 +66,5 @@ group :test do
 end
 
   gem "devise", "~> 5.0"
-  gem "devise_invitable", "~> 2.0"
+  gem "devise_invitable", "~> 3.0"
 
